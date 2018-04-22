@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#EB212E</color>
+    <color name="colorNoTabSelected">#ff848c</color>
     <color name="colorPrimaryDark">#CC1123</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>

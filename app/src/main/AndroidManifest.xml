@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".view.SportActivity" />
         <activity android:name=".view.FansActivity" />
-        <activity android:name=".view.MerchandiseActivity" />
+        <activity android:name=".fragment.MerchandiseActivity" />
         <activity android:name=".view.EventActivity" />
         <activity android:name=".view.RewardActivity"></activity>
     </application>

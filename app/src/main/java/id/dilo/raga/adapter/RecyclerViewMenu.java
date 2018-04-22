@@ -7,11 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import id.dilo.raga.R;
+import id.dilo.raga.fragment.MerchandiseActivity;
 import id.dilo.raga.model.MenuModel;
 import id.dilo.raga.view.SportActivity;
 
@@ -36,12 +38,17 @@ public class RecyclerViewMenu extends RecyclerView.Adapter<RecyclerViewMenu.View
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+        holder.imagehome.setImageResource(menuModels.get(position).getImageHome());
         holder.textViewTitle.setText(menuModels.get(position).getMenuTitle());
         holder.cardViewMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(menuModels.get(position).getMenuTitle().equals("Sport")){
                     Intent intent = new Intent(context, SportActivity.class);
+                    context.startActivity(intent);
+                }
+                else if(menuModels.get(position).getMenuTitle().equals("Merchandise")){
+                    Intent intent = new Intent(context, MerchandiseActivity.class);
                     context.startActivity(intent);
                 }
             }
@@ -55,9 +62,11 @@ public class RecyclerViewMenu extends RecyclerView.Adapter<RecyclerViewMenu.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewTitle;
+        ImageView imagehome;
         CardView cardViewMenu;
         public ViewHolder(View itemView) {
             super(itemView);
+            imagehome = itemView.findViewById(R.id.imagehome);
             textViewTitle = itemView.findViewById(R.id.textTitle);
             cardViewMenu = itemView.findViewById(R.id.cardView);
         }

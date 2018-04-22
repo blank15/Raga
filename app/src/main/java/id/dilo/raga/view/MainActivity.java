@@ -19,8 +19,8 @@ import id.dilo.raga.R;
 import id.dilo.raga.adapter.RecyclerViewMenu;
 import id.dilo.raga.model.MenuModel;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity{
+//        implements NavigationView.OnNavigationItemSelectedListener
 
     private RecyclerView recyclerView;
     private List<MenuModel> menuModels = new ArrayList<>();
@@ -31,29 +31,28 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        MenuModel data = new MenuModel("Fans");
+        MenuModel data = new MenuModel("Fans" ,R.drawable.love);
         menuModels.add(data);
 
-        data = new MenuModel("Video Call");
+        data = new MenuModel("Video Call", R.drawable.ic_videocall);
         menuModels.add(data);
 
-        data = new MenuModel("Sport");
+        data = new MenuModel("Sport", R.drawable.ic_exercise);
         menuModels.add(data);
 
-        data = new MenuModel("Merchandise");
+        data = new MenuModel("Merchandise", R.drawable.ic_merchandise);
         menuModels.add(data);
 
-        data = new MenuModel("Event");
+        data = new MenuModel("Event", R.drawable.ic_event);
         menuModels.add(data);
 
-        data = new MenuModel("Reward");
+        data = new MenuModel("Reward", R.drawable.ic_reward);
         menuModels.add(data);
 
 
@@ -66,8 +65,8 @@ public class MainActivity extends AppCompatActivity
         RecyclerViewMenu adapter = new RecyclerViewMenu(this,menuModels);
         recyclerView.setAdapter(adapter);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -89,12 +88,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -102,28 +97,28 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action
+//        } else if (id == R.id.nav_gallery) {
+//
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 }

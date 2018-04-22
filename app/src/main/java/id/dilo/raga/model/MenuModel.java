@@ -6,16 +6,19 @@ package id.dilo.raga.model;
 
 public class MenuModel {
     String menuTitle;
+    int ImageHome;
 
-    public MenuModel(String menuTitle) {
+    public MenuModel(String menuTitle, int imageHome) {
         this.menuTitle = menuTitle;
+        this.ImageHome = imageHome;
+
     }
 
     public String getMenuTitle() {
         return menuTitle;
     }
 
-    public void setMenuTitle(String menuTitle) {
-        this.menuTitle = menuTitle;
+    public int getImageHome() {
+        return ImageHome;
     }
 }
